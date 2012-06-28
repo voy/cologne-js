@@ -79,7 +79,7 @@ app.get '/', (req, res) ->
 
       res.render 'index', content
 
-app.get '/jsconf.ics', (req, res) ->
+app.get '/jsconf.ics', (req, res) ->  
   res.redirect gcal.getICalUrl
 
 

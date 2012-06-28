@@ -7,7 +7,7 @@ class exports.GoogleCalendar
   getUrl: (controller = 'ical')->    
     "https://www.google.com/calendar/#{ controller }/#{ @calendarId }%40group.calendar.google.com/public/basic"
 
-  getICalUrl: ->
+  getICalUrl: ->    
     "#{ @getUrl() }.ics"
 
   getJSON: (parameters, callback) ->
