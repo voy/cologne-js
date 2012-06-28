@@ -4,7 +4,7 @@ XRegExp  = require('xregexp').XRegExp;
 date     = require('./lib/date.coffee')
 
 
-calendarId = 'podoldti665gcdmmt7u72v62fc'
+calendarId = '6gg9b82umvrktnjsfvegq1tb24'
 gcal       = require('./lib/googlecalendar.coffee').GoogleCalendar(calendarId)
 
 

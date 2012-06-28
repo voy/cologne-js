@@ -4,7 +4,7 @@ class exports.GoogleCalendar
   constructor: (@calendarId) ->
     if not (this instanceof GoogleCalendar) then return new GoogleCalendar(@calendarId)
 
-  getUrl: (controller = 'ical')->
+  getUrl: (controller = 'ical')->    
     "https://www.google.com/calendar/#{ controller }/#{ @calendarId }%40group.calendar.google.com/public/basic"
 
   getICalUrl: ->
