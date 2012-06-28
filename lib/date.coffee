@@ -1,5 +1,5 @@
 strftime = require('strftime').strftime
-months   = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+months   = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 # Date formatting routines
 # Returns an ordinal number. 13 -> 13th, 21 -> 21st etc.

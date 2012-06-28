@@ -8,11 +8,11 @@ head
   meta(charset="utf-8")
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
-  title Cologne.js | Cologne JavaScript meet-up
+  title jsconf.cz | Czech JavaScript meet-up
 
   - var nextMeetupDescription = ''
   - nextMeetupDescription = (events[0] && events[0].date) ? ', next time on ' + events[0].date + ' at 19:30' : ''
-  meta(name="description", content="Your friendly JavaScript user group from Cologne. We meet every 2nd Tuesday#{nextMeetupDescription}. Just come over …")
+  meta(name="description", content="Your friendly JavaScript user group from Prague. We meet every last Thursday#{nextMeetupDescription}. Just come over …")
   meta(name="robots",      content="index, follow")
 
   link(rel='stylesheet', href='/stylesheets/screen.css')
@@ -24,14 +24,14 @@ body
 
   footer(role="contentinfo")
     .left
-      | Made with love in Cologne.<br>
+      | Made in Cologne, we only used.<br>
       | Hosted on GitHub. Go ahead, <a href="https://github.com/cologne-js/cologne-js">fork us</a>.
     .right
 
   script
-    if (location.host === "colognejs.de") {
+    if (location.host === "jsconf.cz") {
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-32245820-1'], ['_trackPageview']);
+      _gaq.push(['_setAccount', 'UA-79221-52'], ['_trackPageview']);
       (function() {
         var ga = document.createElement('script'); ga.async = true; ga.src = 'http://www.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);

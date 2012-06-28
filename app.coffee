@@ -21,10 +21,12 @@ app.configure () ->
 
 app.configure 'development', () ->
   app.set 'cacheInSeconds', 0
+  app.set 'port', 3333
   app.use express.errorHandler({ dumpExceptions: true, showStack: true })
 
 app.configure 'production', () ->
   app.set 'cacheInSeconds', 60 * 60
+  app.set 'port', 80
   app.use express.errorHandler()
 
 
@@ -77,9 +79,9 @@ app.get '/', (req, res) ->
 
       res.render 'index', content
 
-app.get '/colognejs.ics', (req, res) ->
+app.get '/jsconf.ics', (req, res) ->
   res.redirect gcal.getICalUrl
 
 
-app.listen 3333
-console.log "Express server listening in #{ app.settings.env } mode at http://localhost:#{ app.address().port }/"
+app.listen app.settings.port
+console.log "Express server listening in #{ app.settings.env } mode at http://localhost:#{ app.settings.port }/"
