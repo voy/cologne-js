@@ -16,8 +16,9 @@ ordinal = (number) ->
 
 
 exports.convert = (year, month, day) ->
-  position = months.indexOf(month)
-  if (position isnt -1) then month = position
+  # position = months.indexOf(month)
+  month = month - 1
+  #if (position isnt -1) then month = position
   new Date(year, month, day)
 
 
