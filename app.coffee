@@ -51,11 +51,11 @@ app.get '/', (req, res) ->
       if data && data.length
         events = []
         for item in data
-          regex = XRegExp('Wann:.*?(?<day>\\d{1,2})\\. (?<month>\\w+)\\.? (?<year>\\d{4})')
+          regex = XRegExp('Kdy:.*?(?<day>\\d{1,2})\\. (?<month>\\w+)\\.? (?<year>\\d{4})')
           parts = XRegExp.exec(item.details, regex)
           foo = date.convert(parts.year, parts.month, parts.day)
 
-          talks = XRegExp.exec(item.details, XRegExp('Terminbeschreibung: (.*)', 's'))
+          talks = XRegExp.exec(item.details, XRegExp('Popis události: (.*)', 's'))
           if (talks && talks[1])
             [talk1, talk2] = talks[1].split('---')
           else

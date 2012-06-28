@@ -20,7 +20,7 @@ class exports.GoogleCalendar
         return
       else
         try
-          items = JSON.parse(body).data.items
+          items = JSON.parse(body).data.items                    
           callback null, items
         catch err
           callback new Error 'Could not fetch dates from calendar: ' + err
