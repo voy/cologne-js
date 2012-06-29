@@ -64,7 +64,7 @@ app.get('/', function(req, res) {
           regex = XRegExp('When:.*?(?<day>\\d{1,2})\\. (?<month>\\w+)\\.? (?<year>\\d{4})');
           parts = XRegExp.exec(item.details, regex);
           foo = date.convert(parts.year, parts.month, parts.day);
-          talks = XRegExp.exec(item.details, XRegExp('Description: (.*)', 's'));
+          talks = XRegExp.exec(item.details, XRegExp('Event Description: (.*)', 's'));
           if (talks && talks[1]) {
             _ref = talks[1].split('---'), talk1 = _ref[0], talk2 = _ref[1];
           } else {
