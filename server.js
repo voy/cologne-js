@@ -36,7 +36,7 @@ app.configure('development', function() {
 
 app.configure('production', function() {
   app.set('cacheInSeconds', 60 * 60);
-  app.set('port', 80);
+  app.set('port', process.env.PORT || 5000);
   return app.use(express.errorHandler());
 });
 
