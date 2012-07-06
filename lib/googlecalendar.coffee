@@ -4,10 +4,10 @@ class exports.GoogleCalendar
   constructor: (@calendarId) ->
     if not (this instanceof GoogleCalendar) then return new GoogleCalendar(@calendarId)
 
-  getUrl: (controller = 'ical')->    
+  getUrl: (controller = 'ical')->
     "https://www.google.com/calendar/#{ controller }/#{ @calendarId }%40group.calendar.google.com/public/basic"
 
-  getICalUrl: ->    
+  getICalUrl: ->
     "#{ @getUrl() }.ics"
 
   getJSON: (parameters, callback) ->
@@ -20,8 +20,8 @@ class exports.GoogleCalendar
         return
       else
         try
-          items = JSON.parse(body).data.items                    
-          console.log items
+          items = JSON.parse(body).data.items
+          # console.log items
           callback null, items
         catch err
           callback new Error 'Could not fetch dates from calendar: ' + err
