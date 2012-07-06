@@ -1,3 +1,4 @@
+#!/usr/bin/env coffee
 express  = require('express')
 markdown = require('node-markdown').Markdown
 XRegExp  = require('xregexp').XRegExp;
@@ -26,7 +27,7 @@ app.configure 'development', () ->
 
 app.configure 'production', () ->
   app.set 'cacheInSeconds', 60 * 60
-  app.set 'port', 80
+  app.set 'port', process.env.PORT or 5000
   app.use express.errorHandler()
 
 
@@ -79,7 +80,7 @@ app.get '/', (req, res) ->
 
       res.render 'index', content
 
-app.get '/jsconf.ics', (req, res) ->  
+app.get '/jsconf.ics', (req, res) ->
   res.redirect gcal.getICalUrl
 
 

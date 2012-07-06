@@ -1,12 +1,13 @@
 {
-  "name": "Cologne.js",
-  "description": "Cologne.js website on Node",
-  "version": "0.0.3",
+  "name": "JsConfCz",
+  "description": "JsConfCz website on Node",
+  "version": "0.0.5",
   "author": "Timo Derstappen <teemow@gmail.com>",
   "contributors": [
     { "name": "Timo Derstappen", "email": "timo.derstappen@gmail.com" },
     { "name": "Matthias Lübken", "email": "matthias.luebken@gmail.com" },
-    { "name": "Frederic Hemberger", "email": "mail@frederic-hemberger.de" }
+    { "name": "Frederic Hemberger", "email": "mail@frederic-hemberger.de" },
+    { "name": "Ladislav Prskavec", "email": "ladislav@prskavec.net"}
   ],
   "private": true,
   "main" : "app.coffee",
@@ -14,7 +15,7 @@
   "engines": {
     "node": "0.6.x",
     "npm":  "1.0.x"
-  },  
+  },
   "dependencies": {
     "coffee-script": ">= 1.1.1",
     "express": "2.5.0",
