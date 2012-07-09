@@ -3,7 +3,7 @@ express  = require('express')
 markdown = require('node-markdown').Markdown
 XRegExp  = require('xregexp').XRegExp;
 date     = require('./lib/date.coffee')
-
+fs       = require("fs")
 
 calendarId = '6gg9b82umvrktnjsfvegq1tb24'
 gcal       = require('./lib/googlecalendar.coffee').GoogleCalendar(calendarId)
@@ -82,6 +82,13 @@ app.get '/', (req, res) ->
 
 app.get '/jsconf.ics', (req, res) ->
   res.redirect gcal.getICalUrl
+
+app.get '/list', (req, res) ->
+  str = fs.readFileSync(__dirname + '/wiki/meetups.markdown', "utf8");
+  content =
+    'events': []
+    'markup' : [markdown(str)]
+  res.render 'wiki', content
 
 
 app.listen app.settings.port
