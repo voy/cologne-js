@@ -15,3 +15,7 @@
     - [code](https://github.com/abtris/angular-todo-mongohq)
 
 - [Daniel Steigerwald](http://daniel.steigerwald.cz/) - Google Closure, důvody proč tu library preferuju
+
+## 4.5.2012 - Hub
+
+- [Vojta Jína](https://github.com/vojtajina) - AngularJS Workshop
