@@ -68,14 +68,16 @@ app.get '/', (req, res) ->
             talk2: markdown(talk2)
 
         content =
-          'events': events
+          'events': events,
+          'conferences' : [markdown(str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8"))]
 
         # Store content in cache
         cache.set 'websiteContent', content
 
       else
         content =
-          'events': []
+          'events': [],
+          'conferences' : [markdown(str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8"))]
         console.log err
 
       res.render 'index', content
@@ -83,8 +85,15 @@ app.get '/', (req, res) ->
 app.get '/jsconf.ics', (req, res) ->
   res.redirect gcal.getICalUrl
 
-app.get '/list', (req, res) ->
+app.get '/meetups', (req, res) ->
   str = fs.readFileSync(__dirname + '/wiki/meetups.markdown', "utf8");
+  content =
+    'events': []
+    'markup' : [markdown(str)]
+  res.render 'wiki', content
+
+app.get '/conferences', (req, res) ->
+  str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8");
   content =
     'events': []
     'markup' : [markdown(str)]
