@@ -38,6 +38,7 @@ a:active,
 a:hover   { color: darken($js-logo-color, 20%); }
 a:visited { color: darken($js-logo-color, 40%); }
 
+a h1, a h2 { color: #333; text-decoration: none; }
 
 .next-meetup { margin-bottom: 1em; }
 

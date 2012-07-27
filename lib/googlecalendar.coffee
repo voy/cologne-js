@@ -21,7 +21,7 @@ class exports.GoogleCalendar
       else
         try
           items = JSON.parse(body).data.items
-          # console.log items
+          console.log items
           callback null, items
         catch err
           callback new Error 'Could not fetch dates from calendar: ' + err

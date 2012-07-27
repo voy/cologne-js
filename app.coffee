@@ -78,7 +78,7 @@ app.get '/', (req, res) ->
         content =
           'events': [],
           'conferences' : [markdown(str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8"))]
-        console.log err
+        # console.log err
 
       res.render 'index', content
 
