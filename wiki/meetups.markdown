@@ -1,5 +1,14 @@
 # Meetups
 
+## 26.7.2012 - Node5
+
+- Jakub Nešetřil - Node at Apiary.io
+    - [slides](http://www.slideshare.net/jakub.nesetril/node-at-apiaryio)
+
+- Igor Minar, Vojta Jina - Hangout with Angular team
+
+- Daniel Steigerwald - Este Dev Stack
+
 
 ## 28.6.2012 - Microsoft
 
