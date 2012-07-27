@@ -4,3 +4,5 @@ run:
 	coffee app.coffee
 css:	
 	compass compile
+logs:
+	heroku addons:open loggly
