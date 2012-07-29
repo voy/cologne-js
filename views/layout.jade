@@ -14,12 +14,17 @@ head
   - nextMeetupDescription = (events[0] && events[0].date) ? ', next time on ' + events[0].date + ' at 18:00' : ''
   meta(name="description", content="Your friendly JavaScript user group from Prague. We meet every last Thursday#{nextMeetupDescription}. Just come over …")
   meta(name="robots",      content="index, follow")
-
   link(rel='stylesheet', href='/stylesheets/screen.css')
-  | <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-  | <!--[if lt IE 9]><script>(function(){var e='aside article hgroup footer header nav section'.split(' ');for (var i=0,l=e.length;i<l;i++){document.createElement(e[i])}})();</script><![endif]-->
+  link(rel='shortcut icon', href='/favicon.png')
+  //if IE
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+  //if lt IE 9
+    link(rel='stylesheet', href='/stylesheets/ie.css')
+    script (function(){var e='aside article hgroup footer header nav section'.split(' ');for (var i=0,l=e.length;i<l;i++){document.createElement(e[i])}})();
 
 body
+  include includes/header
+
   !{body}
 
   footer(role="contentinfo")

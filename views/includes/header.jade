@@ -1,0 +1,17 @@
+header(role="banner")
+  h1: a(href="/", title="Home") JSConf
+  h2 Welcome to Czech JavaScript meet-up
+  - var view = locals.view
+  nav
+    ul
+      li
+        - if (view === 'index')
+          strong Home
+        - else
+          a(href="/") Home
+
+      li
+        - if (view !== 'index')
+          strong Talks
+        - else
+          a(href="/meetups/") Talks

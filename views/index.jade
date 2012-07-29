@@ -1,12 +1,10 @@
-include includes/head
-
 section(role="main")
   .next-meetup
     - var nextDate = (events[0] && events[0].date) ? events[0].date : "(couldn't retrieve calendar data)"
     h1 Next Meetup: !{nextDate}
     | Doors are always open, join us talks start at 18:00:
 
-  .grid-row
+  .talk-slots.grid-row
     - if (events[0] && events[0].talk1)
       - var talk = events[0].talk1
       include includes/index/slot-taken

@@ -69,6 +69,7 @@ app.get '/', (req, res) ->
 
         content =
           'events': events,
+          'view': 'index',
           'conferences' : [markdown(str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8"))]
 
         # Store content in cache
@@ -77,6 +78,7 @@ app.get '/', (req, res) ->
       else
         content =
           'events': [],
+          'view': 'index',
           'conferences' : [markdown(str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8"))]
         # console.log err
 
@@ -88,17 +90,25 @@ app.get '/jsconf.ics', (req, res) ->
 app.get '/meetups', (req, res) ->
   str = fs.readFileSync(__dirname + '/wiki/meetups.markdown', "utf8");
   content =
-    'events': []
+    'events': [],
+    'view': 'meetups',
     'markup' : [markdown(str)]
   res.render 'wiki', content
 
 app.get '/conferences', (req, res) ->
   str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8");
   content =
-    'events': []
+    'events': [],
+    'view': 'conferences',
     'markup' : [markdown(str)]
   res.render 'wiki', content
 
+app.get  '/404', (req, res) ->
+  content =
+    'events': [],
+    'view': 'conferences'
+  res.status 404
+  res.render '404', content
 
 app.listen app.settings.port
 console.log "Express server listening in #{ app.settings.env } mode at http://localhost:#{ app.settings.port }/"
