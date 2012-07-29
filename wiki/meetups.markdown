@@ -1,4 +1,4 @@
-# Meetups
+# Talks
 
 ## 26.7.2012 - Node5
 
