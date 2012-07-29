@@ -11,7 +11,12 @@ header(role="banner")
           a(href="/") Home
 
       li
-        - if (view !== 'index')
+        - if (view === 'meetups')
           strong Talks
         - else
           a(href="/meetups/") Talks
+      li
+        - if (view === 'conferences')
+          strong Conferences
+        - else
+          a(href="/conferences/") Conferences

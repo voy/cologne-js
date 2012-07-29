@@ -40,7 +40,6 @@ body {
   // @include debug-vertical-alignment;
 }
 
-
 h1, h2 { margin: 0; }
 
 
@@ -56,6 +55,9 @@ p {
   @include margin-trailer;
 }
 
+article h1 {
+  padding-bottom: 1em;
+}
 
 aside {
   h3 {
