@@ -6,6 +6,20 @@
   }
 }
 
+h2 {
+  padding-bottom: 1em;
+}
+
+.grid-1-6 {
+  margin-bottom: 10px;
+  height: 105px;
+}
+.grid-1-6 p {
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+
+}
 
 .talk-slots {
   @include trailer(2);
