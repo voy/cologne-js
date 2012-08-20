@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "vows": ">=0.5.1",
-    "grunt-coffeelint" : "*"
+    "grunt-coffeelint" : "*",
+    "grunt-compass" : "*",
+    "grunt-heroku-deploy": "*"
   }
 }
