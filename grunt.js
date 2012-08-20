@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   // Load tasks
   grunt.loadNpmTasks('grunt-coffeelint');
   grunt.loadNpmTasks('grunt-compass');
-  grunt.loadNpmTasks('grunt-heroku-deploy');
+  grunt.loadNpmTasks('grunt-exec');
   // Project configuration.
   grunt.initConfig({
     compass: {
@@ -20,10 +20,21 @@ module.exports = function(grunt) {
         forcecompile: true
       }
     },
+    coffee: {
+      app: ['app.coffee','lib/*.coffee']
+    },
     watch: { // for development run 'grunt watch'
+      app: {
+        files: ['app.coffee', 'lib/*.coffee'],
+        tasks: 'coffee:app'
+      },
       compass: {
-        files: ['sass/*.sass'],
+        files: ['sass/*.scss'],
         tasks: ['compass:dev']
+      },
+      coffeescript: {
+        files: ['app.coffee','lib/*.coffee'],
+        tasks: ['coffeelint']
       }
     },
     coffeelint: {
@@ -38,13 +49,30 @@ module.exports = function(grunt) {
       }
     },
     coffeelintOptions: {
-
+      max_line_length: {
+        value: 100,
+        level: 'error'
+      }
+    },
+    exec: {
+      deploy: {
+        command: 'git push heroku master',
+        stdout: true,
+        stderr: true
+      },
+      logs: {
+        command: 'heroku addons:open loggly'
+      },
+      run: {
+        command: 'coffee app.coffee',
+        stdout: true,
+        stderr: true
+      }
     }
   });
 
   // Load local tasks.
   grunt.loadTasks('tasks');
-
   // Default task.
-  grunt.registerTask('default', 'coffeelint');
+  grunt.registerTask('default', 'watch');
 };
