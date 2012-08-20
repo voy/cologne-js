@@ -2,7 +2,7 @@
 express  = require('express')
 sm       = require('sitemap')
 markdown = require('node-markdown').Markdown
-XRegExp  = require('xregexp').XRegExp;
+XRegExp  = require('xregexp').XRegExp
 date     = require('./lib/date.coffee')
 fs       = require("fs")
 
@@ -113,7 +113,7 @@ app.get '/jsconf.ics', (req, res) ->
   res.redirect gcal.getICalUrl
 
 app.get '/meetups', (req, res) ->
-  str = fs.readFileSync(__dirname + '/wiki/meetups.markdown', "utf8");
+  str = fs.readFileSync(__dirname + '/wiki/meetups.markdown', "utf8")
   content =
     'events': [],
     'view': 'meetups',
@@ -121,7 +121,7 @@ app.get '/meetups', (req, res) ->
   res.render 'wiki', content
 
 app.get '/conferences', (req, res) ->
-  str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8");
+  str = fs.readFileSync(__dirname + '/wiki/conferences.markdown', "utf8")
   content =
     'events': [],
     'view': 'conferences',

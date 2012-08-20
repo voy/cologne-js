@@ -29,6 +29,7 @@
     "xregexp": "*"
   },
   "devDependencies": {
-    "vows": ">=0.5.1"
+    "vows": ">=0.5.1",
+    "grunt-coffeelint" : "*"
   }
 }
