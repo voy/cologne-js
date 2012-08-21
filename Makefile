@@ -1,3 +1,5 @@
+all:
+	make run
 deploy:
 	git push heroku master
 run:
