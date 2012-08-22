@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 express  = require('express')
+sm       = require('sitemap')
 markdown = require('node-markdown').Markdown
 XRegExp  = require('xregexp').XRegExp;
 date     = require('./lib/date.coffee')
@@ -10,6 +11,15 @@ gcal       = require('./lib/googlecalendar.coffee').GoogleCalendar(calendarId)
 
 
 app = module.exports = express.createServer()
+
+sitemap = module.exports = sm.createSitemap(
+    hostname:"http://jsconf.cz",
+    cacheTime: 600000,
+    urls: [
+      { url: '/meetups/', changefreq: 'weekly',  priority: 0.9 },
+      { url: '/conferences/', changefreq: 'monthly',  priority: 0.3 },
+    ]
+)
 
 # Configuration
 app.configure () ->
@@ -41,6 +51,10 @@ app.get '/*', (req, res, next) ->
     res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url)
   else
     next()
+
+app.get '/sitemap.xml', (req, res) ->
+  res.header('Content-Type', 'application/xml')
+  res.send( sitemap.toString() )
 
 app.get '/', (req, res) ->
 
