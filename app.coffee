@@ -37,6 +37,9 @@ cache = require('./lib/pico.coffee').Pico(app.settings.cacheInSeconds)
 
 # Routes
 app.get '/', (req, res) ->
+  if req.subdomains == ["www"]
+    res.redirect(301, 'http://jsconf.cz/');
+
   content = cache.get 'websiteContent'
   if content
     res.render 'index', content
