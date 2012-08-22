@@ -56,6 +56,10 @@ app.get '/sitemap.xml', (req, res) ->
   res.header('Content-Type', 'application/xml')
   res.send( sitemap.toString() )
 
+app.get '/robots.txt', (req, res) ->
+  res.header('Content-Type', 'text/plain')
+  res.send('User-Agent: *')
+
 app.get '/', (req, res) ->
 
   content = cache.get 'websiteContent'
