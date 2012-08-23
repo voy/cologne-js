@@ -26,15 +26,11 @@ module.exports = function(grunt) {
     watch: { // for development run 'grunt watch'
       app: {
         files: ['app.coffee', 'lib/*.coffee'],
-        tasks: 'coffee:app'
+        tasks: ['coffee:app', 'coffeelint:dev']
       },
       compass: {
         files: ['sass/*.scss'],
         tasks: ['compass:dev']
-      },
-      coffeescript: {
-        files: ['app.coffee','lib/*.coffee'],
-        tasks: ['coffeelint']
       }
     },
     coffeelint: {
@@ -44,7 +40,7 @@ module.exports = function(grunt) {
           indentation: {
             value: 2,
             level: "error"
-          },
+          }
         }
       }
     },

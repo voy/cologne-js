@@ -1,6 +1,8 @@
-var XRegExp, app, cache, calendarId, date, express, fs, gcal, markdown;
+var XRegExp, app, cache, calendarId, date, express, fs, gcal, markdown, sitemap, sm;
 
 express = require('express');
+
+sm = require('sitemap');
 
 markdown = require('node-markdown').Markdown;
 
@@ -15,6 +17,22 @@ calendarId = '6gg9b82umvrktnjsfvegq1tb24';
 gcal = require('./lib/googlecalendar.coffee').GoogleCalendar(calendarId);
 
 app = module.exports = express.createServer();
+
+sitemap = module.exports = sm.createSitemap({
+  hostname: "http://jsconf.cz",
+  cacheTime: 600000,
+  urls: [
+    {
+      url: '/meetups/',
+      changefreq: 'weekly',
+      priority: 0.9
+    }, {
+      url: '/conferences/',
+      changefreq: 'monthly',
+      priority: 0.3
+    }
+  ]
+});
 
 app.configure(function() {
   app.set('views', __dirname + '/views');
@@ -41,6 +59,24 @@ app.configure('production', function() {
 });
 
 cache = require('./lib/pico.coffee').Pico(app.settings.cacheInSeconds);
+
+app.get('/*', function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null) {
+    return res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
+  } else {
+    return next();
+  }
+});
+
+app.get('/sitemap.xml', function(req, res) {
+  res.header('Content-Type', 'application/xml');
+  return res.send(sitemap.toString());
+});
+
+app.get('/robots.txt', function(req, res) {
+  res.header('Content-Type', 'text/plain');
+  return res.send('User-Agent: *');
+});
 
 app.get('/', function(req, res) {
   var content, gcalOptions;
