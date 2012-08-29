@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         tasks: ['coffee:app', 'coffeelint:dev']
       },
       compass: {
-        files: ['sass/*.scss'],
+        files: ['sass/**/*.scss'],
         tasks: ['compass:dev']
       }
     },
