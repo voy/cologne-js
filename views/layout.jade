@@ -23,6 +23,9 @@ head
     script (function(){var e='aside article hgroup footer header nav section'.split(' ');for (var i=0,l=e.length;i<l;i++){document.createElement(e[i])}})();
 
 body
+  script
+    var WRInitTime=(new Date()).getTime();
+
   include includes/header
 
   !{body}
@@ -42,3 +45,10 @@ body
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     }
+
+  <div id="ClickTaleDiv" style="display: none;"></div>
+  script
+    if (document.location.protocol!='https:')
+        document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRd.js'%20type='text/javascript'%3E%3C/script%3E"));
+  script
+    if (typeof ClickTale=='function') ClickTale(2832,0.45,"www14");
