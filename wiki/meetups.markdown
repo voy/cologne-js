@@ -1,5 +1,13 @@
 # Talks
 
+## 30.8.2012 - Node5
+
+- Lukáš Linhart - Node Expressně
+
+- Ladislav Prskavec - Grunt.js
+    - [slides](http://www.slideshare.net/ladislavprskavec/gruntjs)
+
+
 ## 26.7.2012 - Node5
 
 - Jakub Nešetřil - Node at Apiary.io
