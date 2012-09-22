@@ -8,7 +8,7 @@ head
   meta(charset="utf-8")
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
   meta(name="google-site-verification", content="rnozA-sW2-rdUx1DITLdPbVvIeTCN05AHqaHk5Ybnr8")
-  title jsconf.cz | Czech JavaScript meetup
+  title praguejs.cz | Czech JavaScript meetup
 
   - var nextMeetupDescription = ''
   - nextMeetupDescription = (events[0] && events[0].date) ? ', next time on ' + events[0].date + ' at 18:00' : ''
@@ -40,6 +40,14 @@ body
     if (location.host === "jsconf.cz") {
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-79221-52'], ['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.async = true; ga.src = 'http://www.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    }
+    if (location.host === "praguejs.cz") {
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-79221-53'], ['_trackPageview']);
       (function() {
         var ga = document.createElement('script'); ga.async = true; ga.src = 'http://www.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
