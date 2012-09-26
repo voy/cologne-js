@@ -1,4 +1,5 @@
-/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
+/* normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* normalize.css v2.0.1 | HTML5 Display Definitions | MIT License | git.io/normalize */
 article,
 aside,
 details,
@@ -17,8 +18,6 @@ audio,
 canvas,
 video {
   display: inline-block;
-  *display: inline;
-  *zoom: 1;
 }
 
 audio:not([controls]) {
@@ -30,68 +29,30 @@ audio:not([controls]) {
   display: none;
 }
 
-figure {
-  margin: 0;
-}
-
+/* normalize.css v2.0.1 | Base | MIT License | git.io/normalize */
 html {
-  font-size: 100%;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-}
-
-html,
-button,
-input,
-select,
-textarea {
   font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
 }
 
+/* normalize.css v2.0.1 | Links | MIT License | git.io/normalize */
 a:focus {
   outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:active,
+a:hover {
   outline: 0;
 }
 
+/* normalize.css v2.0.1 | Typography | MIT License | git.io/normalize */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
-}
-
-h2 {
-  font-size: 1.5em;
-  margin: 0.83em 0;
-}
-
-h3 {
-  font-size: 1.17em;
-  margin: 1em 0;
-}
-
-h4 {
-  font-size: 1em;
-  margin: 1.33em 0;
-}
-
-h5 {
-  font-size: 0.83em;
-  margin: 1.67em 0;
-}
-
-h6 {
-  font-size: 0.75em;
-  margin: 2.33em 0;
 }
 
 abbr[title] {
@@ -103,10 +64,6 @@ strong {
   font-weight: bold;
 }
 
-blockquote {
-  margin: 1em 40px;
-}
-
 dfn {
   font-style: italic;
 }
@@ -116,17 +73,11 @@ mark {
   color: #000;
 }
 
-p,
-pre {
-  margin: 1em 0;
-}
-
-pre,
 code,
 kbd,
+pre,
 samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
   font-size: 1em;
 }
 
@@ -137,17 +88,11 @@ pre {
 }
 
 q {
-  quotes: none;
-}
-
-q:before,
-q:after {
-  content: '';
-  content: none;
+  quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 small {
-  font-size: 75%;
+  font-size: 80%;
 }
 
 sub,
@@ -166,49 +111,21 @@ sub {
   bottom: -0.25em;
 }
 
-dl,
-menu,
-ol,
-ul {
-  margin: 1em 0;
-}
-
-dd {
-  margin: 0 0 0 40px;
-}
-
-menu,
-ol,
-ul {
-  padding: 0 0 0 40px;
-}
-
-nav ul,
-nav ol {
-  list-style: none;
-  list-style-image: none;
-}
-
+/* normalize.css v2.0.1 | Embedded Content | MIT License | git.io/normalize */
 img {
   border: 0;
-  /* 1 */
-  -ms-interpolation-mode: bicubic;
-  /* 2 */
 }
 
 svg:not(:root) {
   overflow: hidden;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-form {
+/* normalize.css v2.0.1 | Figures | MIT License | git.io/normalize */
+figure {
   margin: 0;
 }
 
+/* normalize.css v2.0.1 | Forms | MIT License | git.io/normalize */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -218,18 +135,15 @@ fieldset {
 legend {
   border: 0;
   padding: 0;
-  white-space: normal;
-  *margin-left: -7px;
 }
 
 button,
 input,
 select,
 textarea {
+  font-family: inherit;
   font-size: 100%;
   margin: 0;
-  vertical-align: baseline;
-  *vertical-align: middle;
 }
 
 button,
@@ -243,7 +157,6 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
-  *overflow: visible;
 }
 
 button[disabled],
@@ -255,8 +168,6 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
-  *height: 13px;
-  *width: 13px;
 }
 
 input[type="search"] {
@@ -266,8 +177,8 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -280,6 +191,12 @@ input::-moz-focus-inner {
 textarea {
   overflow: auto;
   vertical-align: top;
+}
+
+/* normalize.css v2.0.1 | Tables | MIT License | git.io/normalize */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .clear {
@@ -321,19 +238,19 @@ textarea {
 }
 
 .grid-1-3 {
-  width: 32.33333%;
+  width: 32.333%;
   margin-left: 1.5%;
   float: left;
 }
 
 .grid-2-3 {
-  width: 66.16667%;
+  width: 66.167%;
   margin-left: 1.5%;
   float: left;
 }
 
 .grid-1-6 {
-  width: 15.41667%;
+  width: 15.417%;
   margin-left: 1.5%;
   float: left;
 }
@@ -367,6 +284,7 @@ header h1 a {
 header h2 {
   margin-top: 1.5em;
   margin-left: 140px;
+  padding-bottom: 0;
 }
 header nav {
   margin-top: 3em;
@@ -449,7 +367,7 @@ header ul a:hover {
 }
 .next-meetup h1 {
   font-size: 2em;
-  line-height: 0.9375em;
+  line-height: 0.938em;
 }
 
 h2 {
@@ -481,13 +399,13 @@ h2 {
   margin-bottom: 0;
 }
 .talk-slots h1 {
-  font-size: 1.42857em;
+  font-size: 1.429em;
   line-height: 1.05em;
   margin-bottom: 42px;
 }
 .talk-slots h1 + h2 {
-  font-size: 1.14286em;
-  line-height: 1.3125em;
+  font-size: 1.143em;
+  line-height: 1.313em;
   margin-top: -42px;
   font-weight: normal;
 }
@@ -531,7 +449,7 @@ h2 {
   margin-top: 1.5em;
 }
 .talk-list h1 {
-  font-size: 1.71429em;
+  font-size: 1.714em;
   line-height: 1.75em;
 }
 @media screen and (max-width: 42em) {
@@ -647,15 +565,15 @@ article h1 {
 }
 
 aside h3 {
-  font-size: 1.14286em;
-  line-height: 1.3125em;
+  font-size: 1.143em;
+  line-height: 1.313em;
 }
 
 footer {
   clear: both;
   overflow: hidden;
   margin: 3em 0 2em;
-  font-size: 0.85714em;
+  font-size: 0.857em;
   line-height: 1.75em;
 }
 
